@@ -1,0 +1,27 @@
+$container-primary: hsl(0, 0%, 24%);
+$foreground-primary: hsl(0, 0%, 100%);
+$foreground-secondary: hsl(216, 12%, 84%);
+
+$container-secondary: hsl(0, 0%, 100%);
+$container-tertiary: hsl(220, 14%, 96%);
+$foreground-tertiary: hsl(0, 0%, 0%);
+$foreground-quaternary: hsl(215, 14%, 34%);
+$foreground-quinary: hsl(222.2, 47.4%, 11.2%);
+
+$foreground-senary: hsl(217, 91%, 60%);
+
+$container-hl-primary: hsl(217, 91%, 60%);
+$container-hl-secondary: hsl(221, 83%, 53%);
+$foreground-hl-primary: hsl(0, 0%, 100%);
+
+$container-hl-destructive: hsl(0, 84.2%, 60.2%);
+$foreground-hl-destructive: hsl(0, 0%, 100%);
+
+$breakpoint-xs: 640px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1280px;
+
+$shadow-sm:
+  0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06);

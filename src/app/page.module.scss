@@ -1,7 +1,206 @@
+@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
+@import 'variables';
+
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(var(--background-start-rgb));
+  color: #fff;
+  width: 100%;
+  padding: 0 10%;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 200;
+  }
+}
+
+.timeline {
+  width: 90vw;
+  max-width: 1360px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.timelineComponent {
+  position: relative;
+  display: flex;
+  max-width: 1120px;
+  margin-right: auto;
+  margin-left: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timelineItem {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  grid-auto-columns: 1fr;
+  grid-gap: 0;
+  -ms-grid-columns: 200px 180px 1fr;
+  grid-template-columns: 200px 180px 1fr;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+
+  @include breakpoint(0 $breakpoint-sm) {
+    width: 100%;
+    -ms-grid-columns: 64px 1fr;
+    grid-template-columns: 64px 1fr;
+  }
+}
+
+.timelineLeft {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  text-align: right;
+
+  @include breakpoint(0 $breakpoint-sm) {
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    grid-column: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 1;
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.timelineCentre {
+  display: -webkit-box;
+  display: flex;
+  display: flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: 1.2rem;
+
+  @include breakpoint(0 $breakpoint-sm) {
+    grid-row: 1 / 3;
+    justify-content: flex-start;
+  }
+}
+
+.timelineRight {
+  @include breakpoint(0 $breakpoint-sm) {
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+}
+
+.timelineDateText {
+  padding-top: 0.45rem;
+  position: sticky;
+  top: calc(49.5vh - 0.75rem);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+
+  @include breakpoint($breakpoint-sm) {
+    margin-bottom: -0.75rem;
+  }
+}
+
+.timelineText {
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 300;
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding-top: 0.3rem;
+  }
+}
+
+.timelineCircle {
+  position: sticky;
+  top: calc(49.5vh + 0.45rem);
+  width: 15px;
+  height: 15px;
+  max-height: 15px;
+  max-width: 15px;
+  min-height: 15px;
+  min-width: 15px;
+  border-radius: 100%;
+  background-color: rgb(var(--card-border-rgb));
+  box-shadow: 0 0 0 8px rgb(var(--background-start-rgb));
+}
+
+.timelineProgress {
+  position: absolute;
+  z-index: -2;
+  width: 3px;
+  height: 100%;
+  background-color: rgb(var(--card-rgb));
+  left: 288px;
+
+  @include breakpoint(0 $breakpoint-sm) {
+    left: 6px;
+  }
+}
+
+.timelineProgressOverlay {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  top: 0;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0) 100%);
+}
+
+.timelineProgressBar {
+  position: fixed;
+  inset: 0 auto 50vh;
+  z-index: -1;
+  width: 3px;
+  height: 50vh;
+  background-color: #fff;
+  background-image: linear-gradient(180deg, #ff7448, #ff4848 51%, #6248ff);
+}
+
+.timelineLink {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  opacity: 0.6;
+  transition: opacity 300ms ease;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.timelineLink:hover {
+  opacity: 1;
 }
