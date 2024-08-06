@@ -1,0 +1,29 @@
+.common {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid;
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition:
+    color 0.2s,
+    background-color 0.2s;
+  outline: none;
+}
+
+.common:focus {
+  box-shadow:
+    0 0 0 2px rgb(var(--card-border-rgb)),
+    0 0 0 4px rgb(var(--card-rgb));
+}
+
+.default {
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--card-rgb));
+  border-color: transparent;
+}
+
+.outline {
+  color: rgb(var(--foreground-rgb));
+}

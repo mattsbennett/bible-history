@@ -1,0 +1,81 @@
+@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
+
+@mixin padding-x($right, $left, $em-value: 0) {
+  $base: 2;
+
+  padding-right: if($right, $base * 1%, $em-value);
+  padding-left: if($left, $base * 1%, $em-value);
+
+  @include breakpoint(45em) {
+    $base: 5;
+
+    padding-right: if($right, $base * 1%, $em-value);
+    padding-left: if($left, $base * 1%, $em-value);
+  }
+
+  @include breakpoint(56em) {
+    $base: 10;
+
+    padding-right: if($right, $base * 1%, $em-value);
+    padding-left: if($left, $base * 1%, $em-value);
+  }
+
+  @include breakpoint(71.25em) {
+    $base: 15;
+
+    padding-right: if($right, $base * 1%, $em-value);
+    padding-left: if($left, $base * 1%, $em-value);
+  }
+
+  @include breakpoint(80em) {
+    $base: 18;
+
+    padding-right: if($right, $base * 1%, $em-value);
+    padding-left: if($left, $base * 1%, $em-value);
+  }
+
+  @include breakpoint(125em) {
+    $base: 22;
+
+    padding-right: if($right, $base * 1%, $em-value);
+    padding-left: if($left, $base * 1%, $em-value);
+  }
+}
+
+@mixin padding-y($top-percent: null, $bottom-percent: null, $safe-area-bottom: null) {
+  $top-factor: if($top-percent, $top-percent/100, 1);
+  $bottom-factor: if($bottom-percent, $bottom-percent/100, 1);
+  $bottom-safe-area: if($safe-area-bottom, env(safe-area-inset-bottom), 0%);
+  $base: 20;
+
+  padding-bottom: calc(#{$base * $bottom-factor * 1%} + #{$bottom-safe-area});
+  padding-top: $base * $top-factor * 1%;
+
+  @include breakpoint(45em) {
+    $base: 8;
+
+    padding-bottom: calc(#{$base * $bottom-factor * 1%} + #{$bottom-safe-area});
+    padding-top: $base * $top-factor * 1%;
+  }
+
+  @include breakpoint(56em) {
+    $base: 7;
+
+    padding-bottom: calc(#{$base * $bottom-factor * 1%} + #{$bottom-safe-area});
+    padding-top: $base * $top-factor * 1%;
+  }
+
+  @include breakpoint(71.25em) {
+    $base: 5;
+
+    padding-bottom: calc(#{$base * $bottom-factor * 1%} + #{$bottom-safe-area});
+    padding-top: $base * $top-factor * 1%;
+  }
+
+  @include breakpoint(80em) {
+    $base: 4;
+
+    padding-bottom: calc(#{$base * $bottom-factor * 1%} + #{$bottom-safe-area});
+    padding-top: $base * $top-factor * 1%;
+  }
+}
