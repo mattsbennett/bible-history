@@ -7,7 +7,7 @@ import Markdown from 'react-markdown'
 import { Badge } from './Badge'
 import { Button } from './Button'
 import { getFormattedYear } from '../utils/generalUtils'
-import { Event } from '../../../events'
+import { Event } from '../events'
 import s from './TimelineItem.module.scss'
 
 export default function TimelineItem({ event }: { event: Event }) {

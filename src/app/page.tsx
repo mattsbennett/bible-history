@@ -9,7 +9,7 @@ import 'yet-another-react-lightbox/plugins/captions.css'
 import TimelineItem from './components/TimelineItem'
 import { Badge } from './components/Badge'
 import { Button } from './components/Button'
-import { events } from '../../events'
+import { events } from './events'
 import { getFormattedYear } from './utils/generalUtils'
 import s from './page.module.scss'
 
