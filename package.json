@@ -9,16 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.18.0",
+    "@radix-ui/react-slot": "^1.1.0",
     "autoprefixer": "^10.4.19",
     "breakpoint-sass": "^3.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
     "next": "14.2.5",
     "postcss": "^8.4.40",
     "prettier": "^3.3.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0",
     "sass": "^1.77.8",
+    "sqlite3": "^5.1.7",
     "stylelint": "^16.7.0",
     "stylelint-config-sass-guidelines": "^12.0.0",
     "stylelint-order": "^6.0.4",
@@ -32,6 +38,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
+    "prisma": "^5.18.0",
     "typescript": "^5"
   }
 }
