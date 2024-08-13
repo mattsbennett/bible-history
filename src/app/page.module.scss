@@ -9,12 +9,19 @@
   min-height: 100vh;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5rem 5%;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 4.5rem);
   background-color: rgb(var(--background-start-rgb));
   color: #fff;
   width: 100%;

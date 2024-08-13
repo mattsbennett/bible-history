@@ -12,10 +12,19 @@ import { Button } from './components/Button'
 import { events } from './events'
 import { getFormattedYear } from './utils/generalUtils'
 import s from './page.module.scss'
+import { Switch } from './components/Switch'
+import DarkModeSwitch from './components/DarkModeSwitch'
+import { Suspense } from 'react'
 
 export default function Home() {
   return (
     <main className={s.main}>
+      <header className={s.header}>
+        <div>Logo</div>
+        <div>
+          <DarkModeSwitch />
+        </div>
+      </header>
       <section className={s.hero}>
         <h1>How we got our Bible</h1>
         <h2>A journey through time</h2>
@@ -26,7 +35,9 @@ export default function Home() {
           <div className={s.timelineProgress}>
             <div className={s.timelineProgressBar}></div>
           </div>
-          {events.map((event, index) => (<TimelineItem key={index} event={event} />))}
+          {events.map((event, index) => (
+            <TimelineItem key={index} event={event} />
+          ))}
           <div className={s.overlayFadeBottom}></div>
           <div className={s.overlayFadeTop}></div>
         </div>

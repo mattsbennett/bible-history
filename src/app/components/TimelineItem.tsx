@@ -1,6 +1,7 @@
-"use client";
+'use client'
 
 import { useState } from 'react'
+import { useInView } from 'react-intersection-observer'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Markdown from 'react-markdown'
@@ -11,29 +12,37 @@ import { Event } from '../events'
 import s from './TimelineItem.module.scss'
 
 export default function TimelineItem({ event }: { event: Event }) {
-    const [ readMore, setReadMore ] = useState(false);
-    const datedYear = getFormattedYear(event.dated)
-    const discoveredYear = getFormattedYear(event.discovered)
-    const discovered = discoveredYear
-      ? (
-        <div className={s.discovered}>
-            <Badge variant="outline">Discovered</Badge>
-            <div>{discoveredYear}</div>
-          </div>
-      )
-      : '';
-    const dated = datedYear
-      ? (
-        <div className={s.timelineDateText}>
-            <div className={s.dated}>
-              <Badge variant="outline">Dated</Badge>
-              <div>{datedYear}</div>
-            </div>
-          </div>
-      )
-      : '';
+  const [readMore, setReadMore] = useState(false)
+  const { ref, inView, entry } = useInView({ rootMargin: `-49.5% 0% -49.5% 0%` })
+  const datedYear = getFormattedYear(event.dated)
+  const discoveredYear = getFormattedYear(event.discovered)
+  const discovered = discoveredYear ? (
+    <div className={s.discovered}>
+      <Badge variant="outline">Discovered</Badge>
+      <div>{discoveredYear}</div>
+    </div>
+  ) : (
+    ''
+  )
+  const dated = datedYear ? (
+    <div className={s.timelineDateText}>
+      <div className={s.dated}>
+        <Badge variant="outline">Dated</Badge>
+        <div>{datedYear}</div>
+      </div>
+    </div>
+  ) : (
+    ''
+  )
+
   return (
-    <div className={s.timelineItem}>
+    <div
+      className={clsx(
+        s.timelineItem,
+        inView || (entry?.boundingClientRect?.top ?? -1) < 0 ? s.opaque : '',
+      )}
+      ref={ref}
+    >
       <div className={s.timelineLeft}>
         {discovered}
         {dated}
@@ -57,7 +66,14 @@ export default function TimelineItem({ event }: { event: Event }) {
           <div className={clsx(s.fullTextWrap, readMore ? '' : s.truncated)}>
             <Markdown>{event.detail_long}</Markdown>
             <div className={s.gradient}>
-              <Button variant="secondary" className={s.readMore} data-text="Read more" onClick={() => {setReadMore(true)}}>
+              <Button
+                variant="secondary"
+                className={s.readMore}
+                data-text="Read more"
+                onClick={() => {
+                  setReadMore(true)
+                }}
+              >
                 Read more
               </Button>
             </div>
