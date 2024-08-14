@@ -33,11 +33,11 @@
 
 .outline {
   border: 2px solid rgb(var(--foreground-rgb));
-  background-color: var(--background-start-rgb);
+  background-color: var(--background-rgb);
 
   &:hover {
     background-color: rgb(var(--foreground-rgb));
-    color: rgb(var(--background-start-rgb));
+    color: rgb(var(--background-rgb));
   }
 }
 
@@ -50,7 +50,7 @@
   z-index: 1;
 
   &::before {
-    background-color: rgb(var(--background-start-rgb));
+    background-color: rgb(var(--background-rgb));
     content: '';
     cursor: pointer;
     position: absolute;
@@ -71,7 +71,7 @@
 
 .ghost {
   &:hover {
-    background-color: rgb(var(--background-start-rgb));
+    background-color: rgb(var(--background-rgb));
     color: rgb(var(--foreground-rgb));
   }
 }
