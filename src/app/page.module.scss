@@ -10,10 +10,24 @@
 }
 
 .header {
+  align-items: center;
+  border-bottom: 1px solid rgb(var(--callout-border-rgb));
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 1.5rem 5%;
+  padding: 1.25rem 5%;
+}
+
+[data-theme='dark'] {
+  .logoWrap {
+    filter: invert(1);
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .hero {
@@ -29,13 +43,41 @@
   text-align: center;
 
   h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+    font-size: clamp(2rem, 8vw, 5rem);
+    margin-bottom: 0.85rem;
+
+    .underlined {
+      position: relative;
+    }
+
+    .underlined::after {
+      content: '';
+      position: absolute;
+      bottom: -11px;
+      left: 0;
+      height: 13px;
+      width: 100%;
+      background-image: url('/underline.svg');
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+    }
   }
 
   h2 {
     color: rgb(var(--card-border-rgb));
-    font-size: 2rem;
+    font-size: clamp(1.25rem, 5vw, 3rem);
+    font-weight: 300;
+  }
+
+  .card {
+    margin-top: 2.5rem;
+    max-width: 800px;
+    line-height: 1.6;
+    padding: 1.5rem;
+  }
+
+  .cardDescription {
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
     font-weight: 300;
   }
 }
