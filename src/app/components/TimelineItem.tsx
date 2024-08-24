@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useInView } from 'react-intersection-observer'
+import { useMediaQuery } from '@uidotdev/usehooks'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Markdown from 'react-markdown'
@@ -14,6 +15,7 @@ import s from './TimelineItem.module.scss'
 export default function TimelineItem({ event }: { event: Event }) {
   const [readMore, setReadMore] = useState(false)
   const { ref, inView, entry } = useInView({ rootMargin: `-49.5% 0% -49.5% 0%` })
+  const isNarrow = useMediaQuery('only screen and (max-width : 768px)')
   const datedYear = getFormattedYear(event.dated)
   const discoveredYear = getFormattedYear(event.discovered)
   const discovered = discoveredYear ? (
@@ -43,10 +45,12 @@ export default function TimelineItem({ event }: { event: Event }) {
       )}
       ref={ref}
     >
-      <div className={s.timelineLeft}>
-        {discovered}
-        {dated}
-      </div>
+      {!isNarrow && (
+        <div className={s.timelineLeft}>
+          {discovered}
+          {dated}
+        </div>
+      )}
       <div className={s.timelineCentre}>
         <div className={s.timelineCircle}></div>
       </div>
@@ -57,6 +61,12 @@ export default function TimelineItem({ event }: { event: Event }) {
           <h3 aria-hidden className={s.clone}>
             {event.name}
           </h3>
+          {isNarrow && (
+            <div className={s.narrowDate}>
+              {discovered}
+              {dated}
+            </div>
+          )}
           <div className={s.imgWrap}>
             <Image src={`/${event.image}`} fill alt={event.name} />
           </div>

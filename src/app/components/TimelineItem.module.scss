@@ -83,6 +83,13 @@
   font-weight: 300;
   position: relative;
 
+  .narrowDate {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
   h3 {
     font-size: 2rem;
     padding-bottom: 0.5rem;
@@ -199,7 +206,7 @@
 
 .discovered {
   color: rgb(var(--foreground-rgb));
-  font-size: 2rem;
+  font-size: 2em;
   line-height: 1.2;
   font-weight: 500;
 }
@@ -208,7 +215,7 @@
   position: sticky;
   top: calc(49.5vh - 0.75rem);
   color: rgb(var(--foreground-rgb));
-  font-size: 2rem;
+  font-size: 2em;
   line-height: 1.2;
   font-weight: 500;
 
