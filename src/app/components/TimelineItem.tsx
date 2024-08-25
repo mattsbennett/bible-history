@@ -68,13 +68,13 @@ export default function TimelineItem({ event }: { event: Event }) {
       <div className={s.timelineRight}>
         <div className={s.timelineText}>
           <div className={s.underlineOverlay}></div>
-          <Link scroll href={`#${slugify(event.name)}`} className={s.headingAnchor}>
+          <Link aria-label={`Go to top of ${event.name} section`} scroll href={`#${slugify(event.name)}`} className={s.headingAnchor}>
             <h3>
               <Hash size={28} className={s.hash} />
               {event.name}
             </h3>
           </Link>
-          <Link scroll href={`#${slugify(event.name)}`} className={s.headingAnchor}>
+          <Link aria-label={`Go to top of ${event.name} section`} scroll href={`#${slugify(event.name)}`} className={s.headingAnchor}>
             <h3 id={slugify(event.name)} aria-hidden className={s.clone}>
               <Hash size={28} className={s.hash} />
               {event.name}

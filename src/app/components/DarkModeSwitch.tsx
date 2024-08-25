@@ -15,11 +15,12 @@ export default function DarkModeSwitch() {
   }, [])
 
   if (!mounted) {
-    return <Switch disabled icon={<Ellipsis size={14}/>}/>
+    return <Switch aria-label='Toggle dark/light mode' disabled icon={<Ellipsis size={14}/>}/>
   }
 
   return (
       <Switch
+        aria-label='Toggle dark/light mode'
         id="dark-mode"
         icon={theme === 'light' ? <Sun size={14}/> : <Moon size={14}/>}
         checked={theme === 'light'}

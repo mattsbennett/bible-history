@@ -32,7 +32,7 @@ export default function TopButton() {
   }, [scrollDir, scrollPosition, isVisible])
 
   return (
-    <Button variant="outline" className={clsx(s.button, isVisible ? s.isVisible : '')} onClick={handleClick}>
+    <Button aria-label='Go to top of page' variant="outline" className={clsx(s.button, isVisible ? s.isVisible : '')} onClick={handleClick}>
       <ChevronUp size={21} />
     </Button>
   )
