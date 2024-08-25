@@ -1,0 +1,16 @@
+.about {
+  padding: 7.5%;
+
+  p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+}
+
+.heading {
+  padding: 1rem 0;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1;
+  border-top: 2px solid rgb(var(--card-border-rgb));
+}

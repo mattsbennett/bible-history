@@ -1,0 +1,32 @@
+.header {
+  align-items: center;
+  border-bottom: 1px solid rgb(var(--callout-border-rgb));
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 5%;
+
+  a {
+    color: rgba(var(--foreground-secondary-rgb), 0.7);
+  }
+
+  a:hover {
+    color: rgb(var(--foreground-rgb));
+  }
+
+  a.active {
+    color: rgb(var(--foreground-rgb));
+  }
+}
+
+[data-theme='dark'] {
+  .logoWrap {
+    filter: invert(1);
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}

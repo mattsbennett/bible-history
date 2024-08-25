@@ -13,18 +13,12 @@ import DarkModeSwitch from './components/DarkModeSwitch'
 import Link from 'next/link'
 import { Card, CardDescription } from './components/Card'
 import TopButton from './components/TopButton'
+import Header from './components/Header'
 
 export default function Home() {
   return (
     <main className={s.main}>
-      <header className={s.header}>
-        <div className={s.logoWrap}><Link href={'/'}><Image src={'/logo.svg'} width={45} height={45} alt='Logo'/></Link></div>
-        <div className={s.navigation}>
-          <Link href='/about'>About</Link>
-          <Link href='/about'>Contact</Link>
-          <DarkModeSwitch />
-        </div>
-      </header>
+      <Header />
       <section className={s.hero}>
         <h1>How we got our <span className={s.underlined}>Bible</span></h1>
         <h2>A journey through time</h2>
