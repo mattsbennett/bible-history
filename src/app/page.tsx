@@ -1,22 +1,18 @@
-import clsx from 'clsx'
 import Image from 'next/image'
-import Markdown from 'react-markdown'
 import Lightbox from 'yet-another-react-lightbox'
 import Captions from 'yet-another-react-lightbox/plugins/captions'
 import 'yet-another-react-lightbox/styles.css'
 import 'yet-another-react-lightbox/plugins/captions.css'
 
 import TimelineItem from './components/TimelineItem'
-import { Badge } from './components/Badge'
 import { Button } from './components/Button'
+import { ChevronUp } from 'lucide-react'
 import { events } from './events'
-import { getFormattedYear } from './utils/generalUtils'
 import s from './page.module.scss'
-import { Switch } from './components/Switch'
 import DarkModeSwitch from './components/DarkModeSwitch'
-import { Suspense } from 'react'
 import Link from 'next/link'
-import { Card, CardHeader, CardContent, CardDescription } from './components/Card'
+import { Card, CardDescription } from './components/Card'
+import TopButton from './components/TopButton'
 
 export default function Home() {
   return (
@@ -35,6 +31,7 @@ export default function Home() {
         <Card className={s.card}><CardDescription className={s.cardDescription}>This site is dedicated to the miracle of the Bible. We will endeavour to provide the reader with a sketch of the major events that have shaped the history of the Bible. We will review some of the processes, people and places of Bible history.</CardDescription></Card>
       </section>
       <section className={s.timeline}>
+        <TopButton />
         <div className={s.timelineComponent}>
           <div className={s.timelineProgressOverlay}></div>
           <div className={s.timelineProgress}>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import clsx from 'clsx'
 import Image from 'next/image'
@@ -10,8 +10,12 @@ import { Button } from './Button'
 import { getFormattedYear } from '../utils/generalUtils'
 import { Event } from '../events'
 import s from './TimelineItem.module.scss'
+import Link from 'next/link'
+import slugify from '@sindresorhus/slugify'
+import { Hash } from 'lucide-react'
 
 export default function TimelineItem({ event }: { event: Event }) {
+  const [isMounted, setMounted] = useState(false)
   const [readMore, setReadMore] = useState(false)
   const { ref, inView, entry } = useInView({ rootMargin: `-49.5% 0% -49.5% 0%` })
   const datedYear = getFormattedYear(event.dated)
@@ -35,6 +39,17 @@ export default function TimelineItem({ event }: { event: Event }) {
     ''
   )
 
+  useEffect(() => {
+    if (isMounted) {
+      const element = document.getElementById(window.location.hash.replace('#', ''))
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    } else {
+      setMounted(true)
+    }
+  }, [isMounted])
+
   return (
     <div
       className={clsx(
@@ -53,10 +68,18 @@ export default function TimelineItem({ event }: { event: Event }) {
       <div className={s.timelineRight}>
         <div className={s.timelineText}>
           <div className={s.underlineOverlay}></div>
-          <h3>{event.name}</h3>
-          <h3 aria-hidden className={s.clone}>
-            {event.name}
-          </h3>
+          <Link scroll href={`#${slugify(event.name)}`} className={s.headingAnchor}>
+            <h3>
+              <Hash size={28} className={s.hash} />
+              {event.name}
+            </h3>
+          </Link>
+          <Link scroll href={`#${slugify(event.name)}`} className={s.headingAnchor}>
+            <h3 id={slugify(event.name)} aria-hidden className={s.clone}>
+              <Hash size={28} className={s.hash} />
+              {event.name}
+            </h3>
+          </Link>
           <div className={s.narrowDate}>
             {discovered}
             {dated}
