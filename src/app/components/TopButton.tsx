@@ -13,6 +13,7 @@ export default function TopButton() {
   const [isVisible, setIsVisible] = useState(false)
   const handleClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.location.hash = ''
   }
 
   useEffect(() => {
