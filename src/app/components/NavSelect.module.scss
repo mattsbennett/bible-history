@@ -1,10 +1,11 @@
 .selectTrigger {
+  font-size: clamp(1rem, 3vw, 1.25rem);
   cursor: pointer;
   position: absolute;
   left: -2.5rem;
-  top: 0.6rem;
-  width: 2rem;
-  height: 2rem;
+  top: 0.3em;
+  width: 2em;
+  height: 2em;
   padding: 0;
   border: 0;
   opacity: 0.5;
