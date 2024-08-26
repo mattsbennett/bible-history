@@ -3,7 +3,9 @@
 import { useEffect, useState } from 'react'
 import { Switch } from './Switch'
 import { useTheme } from 'next-themes'
-import { Ellipsis, Moon, Sun } from 'lucide-react';
+import { Ellipsis, Moon, Sun } from 'lucide-react'
+
+import s from './DarkModeSwitch.module.scss'
 
 export default function DarkModeSwitch() {
   const [mounted, setMounted] = useState(false)
@@ -15,19 +17,26 @@ export default function DarkModeSwitch() {
   }, [])
 
   if (!mounted) {
-    return <Switch aria-label='Toggle dark/light mode' disabled icon={<Ellipsis size={14}/>}/>
+    return (
+      <Switch
+        className={s.switch}
+        aria-label="Toggle dark/light mode"
+        disabled
+        icon={<Ellipsis size={14} />}
+      />
+    )
   }
 
   return (
-      <Switch
-        aria-label='Toggle dark/light mode'
-        id="dark-mode"
-        icon={theme === 'light' ? <Sun size={14}/> : <Moon size={14}/>}
-        checked={theme === 'light'}
-        className={theme === 'light' ? 'sun' : 'moon'}
-        onCheckedChange={() => {
-          setTheme(theme === 'light' ? 'dark' : 'light')
-        }}
-      />
+    <Switch
+      className={s.switch}
+      aria-label="Toggle dark/light mode"
+      id="dark-mode"
+      icon={theme === 'light' ? <Sun size={14} /> : <Moon size={14} />}
+      checked={theme === 'light'}
+      onCheckedChange={() => {
+        setTheme(theme === 'light' ? 'dark' : 'light')
+      }}
+    />
   )
 }
