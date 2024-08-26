@@ -1,4 +1,5 @@
 .common {
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -70,8 +71,11 @@
 }
 
 .ghost {
+  background-color: transparent;
+  border: 1px solid transparent;
+
   &:hover {
-    background-color: rgb(var(--background-rgb));
+    border: 1px solid;
     color: rgb(var(--foreground-rgb));
   }
 }

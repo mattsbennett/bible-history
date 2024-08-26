@@ -9,8 +9,8 @@
   padding-bottom: 80px;
   grid-auto-columns: 1fr;
   grid-gap: 0;
-  -ms-grid-columns: 200px 180px 1fr;
-  grid-template-columns: 200px 180px 1fr;
+  -ms-grid-columns: 150px 180px 1fr;
+  grid-template-columns: 150px 180px 1fr;
   -ms-grid-rows: auto;
   grid-template-rows: auto;
 
@@ -87,22 +87,52 @@
     @include breakpoint(0 $breakpoint-sm) {
       display: flex;
       font-size: 0.5em;
+      margin-top: 0.75rem;
     }
   }
 
+  .itemHeader {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
   .headingAnchor {
-    .hash {
-      position: absolute;
-      left: -2rem;
-      top: 12px;
-      font-size: 1.5rem;
-      color: rgb(var(--foreground-rgb));
-      opacity: 0;
-      transition: opacity 0.25s ease-out;
+    .lastWordWithIcon {
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
     }
 
-    &:hover .hash {
-      opacity: 1;
+    span {
+      position: relative;
+    }
+
+    .hash {
+      font-size: 1.5rem;
+      color: rgb(var(--foreground-rgb));
+      opacity: 0.5;
+      transition: opacity 0.25s ease-out;
+      margin-bottom: -3px;
+      margin-left: 0.25rem;
+    }
+
+    &:hover {
+      span::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 1px;
+        background: rgb(var(--foreground-rgb));
+        right: 3px;
+        bottom: 1px;
+        width: 22px;
+      }
+
+      .hash {
+        opacity: 1;
+        text-decoration: underline;
+      }
     }
   }
 
@@ -110,21 +140,32 @@
     font-size: 2rem;
     padding-bottom: 0.5rem;
     padding-top: 0.3rem;
-    position: sticky;
-    top: 0;
     background: rgb(var(--background-rgb));
     border-bottom-width: 3px;
     border-bottom-style: solid;
     border-image: linear-gradient(to right, #ff7448, #ff4848 51%, #6248ff) 1;
-    z-index: 2;
-  }
 
-  h3.clone {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    border-bottom: 3px solid rgb(var(--background-rgb));
-    border-image: none;
+    &::before {
+      display: block;
+      content: '';
+      width: 30px;
+      background: linear-gradient(to left, rgba(var(--background-rgb), 1), rgba(255, 255, 255, 0));
+      right: 0;
+      height: 4px;
+      bottom: 0;
+      position: absolute;
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      width: 30px;
+      background: linear-gradient(to right, rgba(var(--background-rgb), 1), rgba(255, 255, 255, 0));
+      left: 0;
+      height: 4px;
+      bottom: 0;
+      position: absolute;
+    }
   }
 
   ul {

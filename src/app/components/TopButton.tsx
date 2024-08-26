@@ -12,7 +12,7 @@ export default function TopButton() {
   const { scrollDir, scrollPosition } = useDetectScroll({ thr: 30, axis: Axis.Y })
   const [isVisible, setIsVisible] = useState(false)
   const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0 })
     window.location.hash = ''
   }
 
@@ -33,7 +33,12 @@ export default function TopButton() {
   }, [scrollDir, scrollPosition, isVisible])
 
   return (
-    <Button aria-label='Go to top of page' variant="outline" className={clsx(s.button, isVisible ? s.isVisible : '')} onClick={handleClick}>
+    <Button
+      aria-label="Go to top of page"
+      variant="outline"
+      className={clsx(s.button, isVisible ? s.isVisible : '')}
+      onClick={handleClick}
+    >
       <ChevronUp size={21} />
     </Button>
   )

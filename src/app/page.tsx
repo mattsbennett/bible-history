@@ -1,18 +1,12 @@
-import Image from 'next/image'
 import Lightbox from 'yet-another-react-lightbox'
 import Captions from 'yet-another-react-lightbox/plugins/captions'
 import 'yet-another-react-lightbox/styles.css'
 import 'yet-another-react-lightbox/plugins/captions.css'
 
 import TimelineItem from './components/TimelineItem'
-import { Button } from './components/Button'
-import { ChevronUp } from 'lucide-react'
 import { events } from './events'
 import s from './page.module.scss'
-import DarkModeSwitch from './components/DarkModeSwitch'
-import Link from 'next/link'
 import { Card, CardDescription } from './components/Card'
-import TopButton from './components/TopButton'
 import Header from './components/Header'
 import clsx from 'clsx'
 
@@ -34,7 +28,6 @@ export default function Home() {
         </Card>
       </section>
       <section className={s.timeline}>
-        <TopButton />
         <div className={s.timelineComponent}>
           <div className={clsx(s.timelineProgressOverlay, s.top)}></div>
           <div className={s.timelineProgress}>

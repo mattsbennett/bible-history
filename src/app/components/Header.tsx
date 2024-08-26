@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { Home } from 'lucide-react'
 
 import s from './Header.module.scss'
 import { usePathname } from 'next/navigation'

@@ -13,6 +13,7 @@ import s from './TimelineItem.module.scss'
 import Link from 'next/link'
 import slugify from '@sindresorhus/slugify'
 import { Hash } from 'lucide-react'
+import NavSelect from './NavSelect'
 
 export default function TimelineItem({ event }: { event: Event }) {
   const [isMounted, setMounted] = useState(false)
@@ -43,7 +44,7 @@ export default function TimelineItem({ event }: { event: Event }) {
     if (isMounted) {
       const element = document.getElementById(window.location.hash.replace('#', ''))
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
+        element.scrollIntoView()
       }
     } else {
       setMounted(true)
@@ -66,20 +67,23 @@ export default function TimelineItem({ event }: { event: Event }) {
         <div className={s.timelineCircle}></div>
       </div>
       <div className={s.timelineRight}>
-        <div className={s.timelineText}>
+        <div id={slugify(event.name)} className={s.timelineText}>
           <div className={s.underlineOverlay}></div>
-          <Link aria-label={`Go to top of ${event.name} section`} scroll href={`#${slugify(event.name)}`} className={s.headingAnchor}>
-            <h3>
-              <Hash size={28} className={s.hash} />
-              {event.name}
-            </h3>
-          </Link>
-          <Link aria-label={`Go to top of ${event.name} section`} scroll href={`#${slugify(event.name)}`} className={s.headingAnchor}>
-            <h3 id={slugify(event.name)} aria-hidden className={s.clone}>
-              <Hash size={28} className={s.hash} />
-              {event.name}
-            </h3>
-          </Link>
+          <div className={s.itemHeader}>
+            {inView ? <NavSelect /> : null}
+            <Link
+              aria-label={`Go to top of ${event.name} section`}
+              href={`#${slugify(event.name)}`}
+              className={s.headingAnchor}
+            >
+              <h3>
+                {event.name.split(' ').slice(0, -1).join(' ')}{' '}
+                <span className={s.lastWordWithIcon}>
+                  {event.name.split(' ').slice(-1)} <Hash size={28} className={s.hash} />
+                </span>
+              </h3>
+            </Link>
+          </div>
           <div className={s.narrowDate}>
             {discovered}
             {dated}
