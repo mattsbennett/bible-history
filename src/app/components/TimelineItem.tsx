@@ -70,7 +70,7 @@ export default function TimelineItem({ event }: { event: Event }) {
         <div id={slugify(event.name)} className={s.timelineText}>
           <div className={s.underlineOverlay}></div>
           <div className={s.itemHeader}>
-            {inView ? <NavSelect /> : null}
+            {inView ? <NavSelect event={event} /> : null}
             <Link
               aria-label={`Go to top of ${event.name} section`}
               href={`#${slugify(event.name)}`}
