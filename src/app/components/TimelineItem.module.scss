@@ -58,6 +58,7 @@
   @include breakpoint(0 $breakpoint-sm) {
     grid-row: 1 / 3;
     justify-content: flex-start;
+    padding-top: 1.1rem;
   }
 }
 
