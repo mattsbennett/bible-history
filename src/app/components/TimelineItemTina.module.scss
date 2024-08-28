@@ -1,0 +1,289 @@
+@import '../../../node_modules/breakpoint-sass/stylesheets/breakpoint';
+@import '../variables';
+
+.timelineItem {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  grid-auto-columns: 1fr;
+  grid-gap: 0;
+  -ms-grid-columns: 150px 180px 1fr;
+  grid-template-columns: 150px 180px 1fr;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+
+  &.opaque {
+    .timelineLeft,
+    .timelineRight {
+      opacity: 1;
+    }
+  }
+
+  @include breakpoint(0 $breakpoint-sm) {
+    width: 100%;
+    -ms-grid-columns: 64px 1fr;
+    grid-template-columns: 64px 1fr;
+  }
+}
+
+.timelineLeft {
+  text-align: right;
+  opacity: 0.25;
+  transition: opacity 0.35s ease;
+
+  @include breakpoint(0 $breakpoint-sm) {
+    display: none;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    grid-column: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 1;
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.timelineCentre {
+  display: -webkit-box;
+  display: flex;
+  display: flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: 1.2rem;
+
+  @include breakpoint(0 $breakpoint-sm) {
+    grid-row: 1 / 3;
+    justify-content: flex-start;
+    padding-top: 1.1rem;
+  }
+}
+
+.timelineRight {
+  margin-bottom: -1.4rem;
+  opacity: 0.25;
+  transition: opacity 0.35s ease;
+
+  @include breakpoint(0 $breakpoint-sm) {
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+}
+
+.timelineText {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  line-height: 1.3;
+  font-weight: 300;
+  position: relative;
+
+  .narrowDate {
+    display: none;
+    gap: 1rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+
+    @include breakpoint(0 $breakpoint-sm) {
+      display: flex;
+      font-size: 0.5em;
+      margin-top: 0.75rem;
+    }
+  }
+
+  .itemHeader {
+    font-size: clamp(1.75rem, 5vw, 2rem);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  .headingAnchor {
+    .lastWordWithIcon {
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    span {
+      position: relative;
+    }
+
+    .hash {
+      font-size: 1.5rem;
+      color: rgb(var(--foreground-rgb));
+      opacity: 0.5;
+      transition: opacity 0.25s ease-out;
+      margin-bottom: -3px;
+      margin-left: 0.25rem;
+    }
+
+    &:hover {
+      span::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 1px;
+        background: rgb(var(--foreground-rgb));
+        right: 3px;
+        bottom: 1px;
+        width: 22px;
+      }
+
+      .hash {
+        opacity: 1;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  h3 {
+    font-size: clamp(1.75rem, 5vw, 2rem);
+    padding-bottom: 0.5rem;
+    padding-top: 0.3rem;
+    background: rgb(var(--background-rgb));
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(to right, #ff7448, #ff4848 51%, #6248ff) 1;
+
+    &::before {
+      display: block;
+      content: '';
+      width: 30px;
+      background: linear-gradient(to left, rgba(var(--background-rgb), 1), rgba(255, 255, 255, 0));
+      right: 0;
+      height: 4px;
+      bottom: 0;
+      position: absolute;
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      width: 30px;
+      background: linear-gradient(to right, rgba(var(--background-rgb), 1), rgba(255, 255, 255, 0));
+      left: 0;
+      height: 4px;
+      bottom: 0;
+      position: absolute;
+    }
+  }
+
+  ul {
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .introWrap {
+    margin-top: 1rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .fullTextWrap {
+    margin-top: 1rem;
+    color: rgb(var(--foreground-secondary-rgb));
+    font-size: clamp(1.1rem, 3vw, 1.25rem);
+    font-weight: 400;
+    line-height: 1.5;
+    position: relative;
+
+    h4 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    &.truncated {
+      max-height: 300px;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+
+      .gradient {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(0deg, rgb(var(--background-rgb)), transparent);
+        bottom: 0;
+      }
+
+      .readMore {
+        margin: 0 auto;
+        display: block;
+        margin-top: calc(200px - 2.75rem);
+      }
+    }
+
+    .gradient,
+    .readMore {
+      display: none;
+    }
+  }
+
+  .underlineOverlay {
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    bottom: -1px;
+    z-index: 3;
+    background: rgb(var(--background-rgb));
+  }
+
+  .imgWrap {
+    border-radius: 10px;
+    height: 250px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.timelineCircle {
+  position: sticky;
+  top: calc(49.5vh + 0.45rem);
+  width: 15px;
+  height: 15px;
+  max-height: 15px;
+  max-width: 15px;
+  min-height: 15px;
+  min-width: 15px;
+  border-radius: 100%;
+  background-color: rgb(var(--foreground-rgb));
+  box-shadow: 0 0 0 8px rgb(var(--background-rgb));
+}
+
+.discovered {
+  color: rgb(var(--foreground-rgb));
+  font-size: 2.5em;
+  line-height: 1.2;
+  font-weight: 500;
+
+  @include breakpoint($breakpoint-sm) {
+    font-size: 2em;
+  }
+}
+
+.timelineDateText {
+  position: sticky;
+  top: calc(49.5vh - 0.75rem);
+  color: rgb(var(--foreground-rgb));
+  font-size: 2.5em;
+  line-height: 1.2;
+  font-weight: 500;
+
+  @include breakpoint($breakpoint-sm) {
+    margin-bottom: -0.75rem;
+    font-size: 2em;
+  }
+}

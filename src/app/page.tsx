@@ -4,13 +4,30 @@ import 'yet-another-react-lightbox/styles.css'
 import 'yet-another-react-lightbox/plugins/captions.css'
 
 import TimelineItem from './components/TimelineItem'
+import TimelineItemTina from './components/TimelineItemTina'
 import { events } from './events'
 import s from './page.module.scss'
 import { Card, CardDescription } from './components/Card'
 import Header from './components/Header'
 import clsx from 'clsx'
+import { client } from '../../tina/__generated__/client'
 
-export default function Home() {
+export default async function Home() {
+  const { data } = await client.queries.eventsConnection()
+  const eventsFull = data.eventsConnection.edges ?? []
+  const events = eventsFull.map((event) => {
+    return event?.node
+  })
+
+  if (!events) {
+    return null
+  }
+
+  // We want to sort on dated, but we have to use strings because of the way
+  // TinaCMS stores dates (doesn't support negative/BCE years, and because we're
+  // using negative years in a string, TinaCMS doesn't sort them correctly)
+  events.sort((a, b) => parseInt(a?.dated ?? '0', 10) - parseInt(b?.dated ?? '0', 10))
+
   return (
     <main className={s.main}>
       <Header />
@@ -33,9 +50,15 @@ export default function Home() {
           <div className={s.timelineProgress}>
             <div className={s.timelineProgressBar}></div>
           </div>
-          {events.map((event, index) => (
+          {/* {events.map((event, index) => (
             <TimelineItem key={index} event={event} />
-          ))}
+          ))} */}
+          {events.map((event) => {
+            if (!event) {
+              return null
+            }
+            return <TimelineItemTina key={event.id} event={event} events={events} />
+          })}
           <div className={clsx(s.timelineProgressOverlay, s.bottom)}></div>
         </div>
         <div className={s.today}>
