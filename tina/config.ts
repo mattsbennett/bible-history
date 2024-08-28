@@ -80,7 +80,7 @@ export default defineConfig({
             ui: {
               validate(value) {
                 if (value && value.match(/^-?\d+$/) === null) {
-                  return "Dated year must be an integer value";
+                  return "Discovered year must be an integer value";
                 }
               },
               description: "Use negative numbers for BCE",
