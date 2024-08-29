@@ -1,6 +1,6 @@
 ---
 title: Tyndale's New Testament
-coverImage: /tyndale.webp
+coverImage: /public/tyndale.webp
 intro: >-
   William Tyndale's New Testament was the first English translation to be
   printed.
