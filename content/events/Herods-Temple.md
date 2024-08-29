@@ -1,6 +1,6 @@
 ---
 title: Herod's Temple
-coverImage: /herod.webp
+coverImage: /public/herod.webp
 intro: >-
   Herod's Temple was the second temple in Jerusalem, constructed during the
   reign of Herod the Great.
