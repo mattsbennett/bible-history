@@ -1,6 +1,6 @@
 ---
 title: 17th Century Commentaries
-coverImage: /commentaries.webp
+coverImage: /public/commentaries.webp
 intro: The 17th Century saw a proliferation of Bible commentaries.
 dated: '1620'
 ---
