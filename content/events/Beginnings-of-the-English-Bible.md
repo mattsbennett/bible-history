@@ -1,6 +1,6 @@
 ---
 title: Beginnings of the English Bible
-coverImage: /englishbeginnings.webp
+coverImage: /public/englishbeginnings.webp
 intro: The first English translations of the Bible were made in the 7th century.
 dated: '700'
 ---
