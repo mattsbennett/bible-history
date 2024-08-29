@@ -1,6 +1,6 @@
 ---
 title: Tel Dan Stele
-coverImage: /teldan.webp
+coverImage: /public/teldan.webp
 intro: >-
   Tel Dan is a biblical site in Northern Israel that has been excavated by the
   Israeli archaeologist Avraham Biran. The site has been identified with the
