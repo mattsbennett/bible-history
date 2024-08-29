@@ -1,6 +1,6 @@
 ---
 title: The Rosetta Stone
-coverImage: /rosetta.webp
+coverImage: /public/rosetta.webp
 intro: >-
   The Rosetta Stone is a granodiorite stele inscribed with three versions of a
   decree issued in Memphis, Egypt in 196 BC during the Ptolemaic dynasty.
