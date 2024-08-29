@@ -1,6 +1,6 @@
 ---
 title: Codex Sinaiticus
-coverImage: /sinaiticus.webp
+coverImage: /public/sinaiticus.webp
 intro: >-
   Codex Sinaiticus is one of the most important books in the world. Handwritten
   well over 1600 years ago, the manuscript contains the Christian Bible in
@@ -31,7 +31,7 @@ The story of how von Tischendorf found the manuscript, which contained most of t
 
 After some negotiations, he obtained possession of this precious fragment, and conveyed it to Tsar Alexander, who appreciated its importance and had it published as nearly as possible in facsimile, so as to exhibit correctly the ancient handwriting. The Tsar sent the monastery 9,000 rubles by way of compensation. Regarding Tischendorf's role in the transfer to Saint Petersburg, there are several views. Although when parts of Genesis and the Book of Numbers were later found in the bindings of other books, they were amicably sent to Tischendorf, the Codex is currently regarded by the monastery as having been stolen, a view hotly contested by several scholars in Europe.
 
- In a more neutral spirit, New Testament scholar Bruce Metzger writes: "Certain aspects of the negotiations leading to the transfer of the codex to the Czar's possession are open to an interpretation that reflects adversely on Tischendorf's candour and good faith with the monks at St. Catherine's." For a recent account intended to exculpate him of blame, see Erhard Lauch's article 'Nichts gegen Tischendorf' in Bekenntnis zur Kirche: Festgabe für Ernst Sommerlath zum 70. Geburtstag (Berlin, c. 1961); for an account that includes a hitherto unknown receipt given by Tischendorf to the authorities at the monastery promising to return the manuscript from St. Petersburg 'to the Holy Confraternity of Sinai at its earliest request'.
+In a more neutral spirit, New Testament scholar Bruce Metzger writes: "Certain aspects of the negotiations leading to the transfer of the codex to the Czar's possession are open to an interpretation that reflects adversely on Tischendorf's candour and good faith with the monks at St. Catherine's." For a recent account intended to exculpate him of blame, see Erhard Lauch's article 'Nichts gegen Tischendorf' in Bekenntnis zur Kirche: Festgabe für Ernst Sommerlath zum 70. Geburtstag (Berlin, c. 1961); for an account that includes a hitherto unknown receipt given by Tischendorf to the authorities at the monastery promising to return the manuscript from St. Petersburg 'to the Holy Confraternity of Sinai at its earliest request'.
 
 For many decades, it was preserved in the Russian National Library. In 1933, the Soviet Union sold the Codex to the British Library for £100,000.
 
