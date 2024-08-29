@@ -1,6 +1,6 @@
 ---
 title: The King James Bible
-coverImage: /kingjames.webp
+coverImage: /public/kingjames.webp
 intro: >-
   The King James Bible was the third authorized translation of the Bible into
   English.
