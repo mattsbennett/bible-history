@@ -1,6 +1,6 @@
 ---
 title: The Wycliffe Bible
-coverImage: /wycliffe.webp
+coverImage: /public/wycliffe.webp
 intro: >-
   The Wycliffe Bible is the name now given to a group of Bible translations into
   Middle English that were made under the direction of John Wycliffe.
