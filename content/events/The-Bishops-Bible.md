@@ -1,6 +1,6 @@
 ---
 title: The Bishop's Bible
-coverImage: /bishop.webp
+coverImage: /public/bishop.webp
 intro: >-
   The Bishop's Bible was produced under the authority of the Church of England
   in 1568 in response to the Geneva Bible.
