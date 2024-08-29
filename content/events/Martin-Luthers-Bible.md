@@ -1,6 +1,6 @@
 ---
 title: Martin Luther's Bible
-coverImage: /luther.webp
+coverImage: /public/luther.webp
 intro: Martin Luther's Bible was the first full translation of the Bible into German.
 dated: '1522'
 ---
