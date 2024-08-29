@@ -1,6 +1,6 @@
 ---
 title: Siloam Inscription
-coverImage: /siloam.webp
+coverImage: /public/siloam.webp
 intro: >-
   The Siloam Inscription is carved into a commemorative stone on the walls
   surrounding the pool of Siloam in Jerusalme, discovered in 1880.
