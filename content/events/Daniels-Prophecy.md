@@ -18,7 +18,7 @@ Then the astrologers offended the king. Again, back to the record. The astrologe
 
 Well the king was furious and ordered the execution of all the advisors in his kingdom. However, there was a young prince who had been taken captive from Judah; his name was Daniel. Daniel intervened on behalf of the wise men of Babylon and asked for time to make a presentation to the king.
 
-\#### A God In Heaven
+#### A God In Heaven
 
 He was given the opportunity. But Daniel carefully prefaced his explanation to the king by saying that it was not by his own wisdom that he could provide the king with the answer... but there is a God in heaven who reveals mysteries. He has shown King Nebuchadnezzar what will happen in days to come. Your dream and the visions that passed through your mind as you lay on your bed are these: As you were lying there, O king, your mind turned to things to come, and the revealer of mysteries showed you what is going to happen. As for me, this mystery has been revealed to me, not because I have greater wisdom than other living men, but so that you, O king, may know the interpretation and that you may understand what went through your mind. You looked, O king, and there before you stood a large statue -- an enormous, dazzling statue, awesome in appearance.
 
@@ -28,13 +28,13 @@ While you were watching, a rock was cut out, but not by human hands. It struck t
 
 The explanation God provided for this great king, through the mouth of his servant was simple but profound. The four metals represented four kingdoms that would arise on the earth. The first portrayed was Nebuchadnezzar's own kingdom, Babylon, the head of gold. After him was to arise another kingdom that would be inferior -- represented by the chest and arms of silver. Following this empire, another of brass then another represented by iron. All the metals were to represent some aspect of each succeeding empire that would arise on the earth. Then, in the end, a time would come when the nations would be like iron mixed with clay.... Just as you saw that the feet and toes were partly of baked clay and partly of iron, so this will be a divided kingdom; yet it will have some of the strength of iron in it, even as you saw iron mixed with clay. As the toes were partly iron and partly clay, so this kingdom will be partly strong and partly brittle. And just as you saw the iron mixed with baked clay, so the people will be a mixture and will not remain united, any more than iron mixes with clay. In the time of those kings, the God of heaven will set up a kingdom that will never be destroyed, nor will it be left to another people. It will crush all those kingdoms and bring them to an end, but it will itself endure forever. This is the meaning of the vision of the rock cut out of a mountain, but not by human hands -- a rock that broke the iron, the bronze, the clay, the silver and the gold to pieces. "The great God has shown the king what will take place in the future. The dream is true and the interpretation is trustworthy." Daniel 2:41-45 (NIV)
 
-\#### Mother of all prophecies
+#### Mother of all prophecies
 
 It could easily be said that this is indeed the 'mother of all Bible prophecies'. The meaning of this dream became the basis of all future prophecies that related to the future of the world but especially to the people of Israel, Daniel's people. As it will be shown later, all of these prophecies were given primarily as they related to the Jews.
 
 The historical context is obvious and well understood by all serious students of the Bible. It displayed four world kingdoms that were to arise causing the dream to run parallel to history. The Babylonian kingdom of Nebuchadnezzar was taken over by the Medes and Persians. They, in turn, were conquered by the Greeks under the brilliant leadership of Alexander the Great. The Greek Empire collapsed, after the death of Alexander into four separate kingdoms ruled by four of Alexanders Generals. This divided state finally gave way to the fourth empire, Rome. This is all a matter of ancient history. Most of the interpretation, however, was given long before most of the events took place.
 
-\#### A great cataclysm
+#### A great cataclysm
 
 But the vision was not given to Nebuchadnezzar so much to show the succession of empires that would come as to show the great cataclysm that will usher in the Kingdom of God and to define the world situation at that time. It should have also been a lesson to this proud king that all kingdoms of men will eventually be displaced by the Kingdom of God that will be established on earth.
 
@@ -48,7 +48,7 @@ It might be important to mention that the word "mixed" that is used in the proph
 
 Integrated and fragmented. This describes precisely the incongruity of the image. Consider an image with a head of pure gold (the heaviest of the four metals) standing on "mixed" feet made of iron and clay. The New World Order of man will exist as a marvel and will, according to the Bible, be worshipped by all mankind for the wonder of its existence. This world order will stand on the fragile and flamable issues in the Middle East as we see the transition to the Kingdom of God on earth and the redemption of the Nation of Israel.
 
-\#### What is to come
+#### What is to come
 
 Nebuchadnezzar began a succession of empires that would have a profound affect on Israel and the city of Jerusalem. He destroyed the city at the zenith of his reign and took most of the educated and royalty to serve as captives in Babylon. Under the rule of the Medes and Persians the Nation of Israel was encouraged to return and rebuild the city of Jerusalem and re-inhabit the land. While Alexander the Great had been favourable to Israel, the kingdoms of the Selucids and Ptolemies that followed treated Israel and the Jews with extreme brutality. The temple was desecrated under one of the Selucids, Antiochus IV Epiphanes. The Roman Empire played host to the crucifixion of Jesus Christ, the Jewish Messiah. The Roman Legions also destroyed the city of Jerusalem and the temple in AD. 70. The Jews were scattered throughout the world to suffer persecution for the next 1800 years.
 
