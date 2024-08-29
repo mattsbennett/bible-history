@@ -11,6 +11,7 @@ import { Card, CardDescription } from './components/Card'
 import Header from './components/Header'
 import clsx from 'clsx'
 import { client } from '../../tina/__generated__/client'
+import { Events } from '../../tina/__generated__/types'
 
 export default async function Home() {
   const { data } = await client.queries.eventsConnection()
@@ -57,7 +58,7 @@ export default async function Home() {
             if (!event) {
               return null
             }
-            return <TimelineItemTina key={event.id} event={event} events={events} />
+            return <TimelineItemTina key={event.id} event={event as Events} events={events as Events[]} />
           })}
           <div className={clsx(s.timelineProgressOverlay, s.bottom)}></div>
         </div>
