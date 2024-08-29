@@ -1,6 +1,6 @@
 ---
 title: The Lenigrad Codex
-coverImage: /leningrad.webp
+coverImage: /public/leningrad.webp
 intro: >-
   The Leningrad Codex is the oldest complete manuscript of the Hebrew Bible in
   Hebrew, using the Masoretic Text and Tiberian vocalization.
