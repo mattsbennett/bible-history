@@ -1,6 +1,6 @@
 ---
 title: 18th Century Bibles
-coverImage: /18thcentury.webp
+coverImage: /public/18thcentury.webp
 intro: 18th Century Bibles all use the text of the King James Bible of 1611.
 dated: '1700'
 ---
