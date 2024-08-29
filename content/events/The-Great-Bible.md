@@ -1,6 +1,6 @@
 ---
 title: The Great Bible
-coverImage: /great.webp
+coverImage: /public/great.webp
 intro: >-
   The Great Bible was the first church-authorized edition of the Bible in
   English.
