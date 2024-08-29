@@ -1,6 +1,6 @@
 ---
 title: 19th Century English Bibles
-coverImage: /19thcentury.webp
+coverImage: /public/19thcentury.webp
 intro: >-
   Throughout the 19th Century, large Bibles with elaborate covers, a commentary
   to accompany the text and maps, and extensive reference materials and
