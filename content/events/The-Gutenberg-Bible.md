@@ -1,6 +1,6 @@
 ---
 title: The Gutenberg Bible
-coverImage: /gutenberg.webp
+coverImage: /public/gutenberg.webp
 intro: >-
   The Gutenberg Bible was the first major book printed using mass-produced
   movable metal type in Europe.
