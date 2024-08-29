@@ -1,6 +1,6 @@
 ---
 title: Matthew-Tyndale Bible
-coverImage: /matthewtyndale.webp
+coverImage: /public/matthewtyndale.webp
 intro: >-
   The Matthew-Tyndale Bible was the first English Bible to be printed in
   England.
