@@ -12,3 +12,13 @@ export function getFormattedYear(date: Date | null): string | null {
 
   return `${year}`
 }
+
+export function getImagePath(path: string): string {
+  // TinaCMS adds /public to the path of the image to match its cloud media
+  // path, but we don't want that in development
+  if (process.env.NODE_ENV === 'development') {
+    return path.replace('/public', '')
+  }
+
+  return path
+}

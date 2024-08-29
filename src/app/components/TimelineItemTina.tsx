@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Badge } from './Badge'
 import { Button } from './Button'
-import { getFormattedYear } from '../utils/generalUtils'
+import { getFormattedYear, getImagePath } from '../utils/generalUtils'
 import s from './TimelineItemTina.module.scss'
 import Link from 'next/link'
 import slugify from '@sindresorhus/slugify'
@@ -89,7 +89,7 @@ export default function TimelineItemTina({ event, events }: { event: Events, eve
             {dated}
           </div>
           <div className={s.imgWrap}>
-            <Image src={event.coverImage} fill alt={event.title} />
+            <Image src={getImagePath(event.coverImage)} fill alt={event.title} />
           </div>
           <div className={s.introWrap}>
             <p className={s.intro}>{event.intro}</p>
