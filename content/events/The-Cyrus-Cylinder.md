@@ -1,6 +1,6 @@
 ---
 title: The Cyrus Cylinder
-coverImage: /cyrus.webp
+coverImage: /public/cyrus.webp
 intro: >-
   The Cyrus Cylinder is a clay cylinder inscribed in Akkadian cuneiform script
   with an account by Cyrus the Great, king of Persia.
@@ -17,5 +17,3 @@ The cylinder continues that Marduk, the great Lord, was pleased with the way Cyr
 The cylinder records that Cyrus caused the gods to return to their homelands and dwell in their residences for all time. Cyrus permitted all to live in peace.
 
 The confirmation of the Bible comes at this point in the cylinder record. The Bible tells us that the Jewish people applied to the King of Persia to have these resettlement policies applied to them. The King of Persia then allowed the Jewish people to return to their homeland from captivity in Babylon. They were also assisted in rebuilding their Temple. The record is at the end of Kings and in the book of Ezra.
-
-
