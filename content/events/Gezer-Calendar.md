@@ -1,6 +1,6 @@
 ---
 title: Gezer Calendar
-coverImage: /gezer.webp
+coverImage: /public/gezer.webp
 intro: >-
   This small inscribed limestone tablet was discovered in 1908 by R.A.S.
   Macalister in the ancient Israeli city of Gezer.
