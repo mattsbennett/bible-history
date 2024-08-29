@@ -1,6 +1,6 @@
 ---
 title: The Geneva Bible
-coverImage: /geneva.webp
+coverImage: /public/geneva.webp
 intro: >-
   The Geneva Bible was the first English Bible to add numbered verses to the
   chapters.
