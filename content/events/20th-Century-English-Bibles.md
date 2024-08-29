@@ -1,6 +1,6 @@
 ---
 title: 20th Century English Bibles
-coverImage: /20thcentury.webp
+coverImage: /public/20thcentury.webp
 intro: >-
   If translations of individual books of the Bible are included, almost 500
   versions of the English Bible were published over the previous two centuries.
