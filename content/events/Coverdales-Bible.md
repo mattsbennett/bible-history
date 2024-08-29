@@ -1,6 +1,6 @@
 ---
 title: Coverdale's Bible
-coverImage: /coverdale.webp
+coverImage: /public/coverdale.webp
 intro: >-
   Coverdale's Bible was the first complete Modern English translation of the
   Bible.
