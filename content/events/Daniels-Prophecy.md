@@ -1,6 +1,6 @@
 ---
 title: Daniel's Prophecy
-coverImage: /daniel.webp
+coverImage: /public/daniel.webp
 intro: >-
   An ancient Babylonian king's nightmare illustrates the divine plan of
   salvation for the Nation of Israel - and the redemption of the world through a
