@@ -168,7 +168,7 @@ export default defineConfig({
   },
   search: {
     tina: {
-      indexerToken: '772fefa15ab054076c61ce88f6574a9194ecd7f7',
+      indexerToken: process.env.TINA_SEARCH_TOKEN,
       stopwordLanguages: ['eng'],
     },
     indexBatchSize: 100,
