@@ -11,11 +11,16 @@ interface Actions {
 }
 
 export const useStore = create<State & Actions>()(
-  devtools(immer((set) => ({
-    theme: (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light',
-    setTheme: (theme: string) =>
-      set((state) => {
-        state.theme = theme
-      }),
-  }))),
+  devtools(
+    immer((set) => ({
+      theme:
+        window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light',
+      setTheme: (theme: string) =>
+        set((state) => {
+          state.theme = theme
+        }),
+    })),
+  ),
 )

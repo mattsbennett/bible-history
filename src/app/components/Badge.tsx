@@ -3,19 +3,17 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { clsx } from 'clsx'
 import s from './Badge.module.scss'
 
-const badgeVariants = cva(s.common,
-  {
-    variants: {
-      variant: {
-        default: s.default,
-        outline: s.outline,
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
+const badgeVariants = cva(s.common, {
+  variants: {
+    variant: {
+      default: s.default,
+      outline: s.outline,
     },
   },
-)
+  defaultVariants: {
+    variant: 'default',
+  },
+})
 
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLDivElement>,

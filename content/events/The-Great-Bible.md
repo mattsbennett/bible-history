@@ -13,4 +13,4 @@ Myles Coverdale has had a considerable influence on the early development of the
 
 A few notes were retained in the Great Bible, but only those that made the meaning of words or expressions clearer. This was in response to criticisms of earlier Bible translations. The order of the New Testament books was the same as in Erasmus text and also in the later King James Bible. One interesting mistake in this Bible is the heading to the Apocrypha. It is referred to as the Hagiographa, which means holy writings.
 
-The Great Bible was avidly read aloud in the churches.  At times these Bible readings even interrupted the regular church services.  Nonetheless, it was continuously available in churches even during the reign of Mary Tudor (1553-1558) despite her reversal of the reforming policies that had made Bibles in English widely available.
+The Great Bible was avidly read aloud in the churches. At times these Bible readings even interrupted the regular church services. Nonetheless, it was continuously available in churches even during the reign of Mary Tudor (1553-1558) despite her reversal of the reforming policies that had made Bibles in English widely available.

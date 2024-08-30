@@ -1,16 +1,10 @@
-import Header from '../components/Header'
-import styles from './page.module.scss'
+import Contact from './client-page'
+import client from '../../../tina/__generated__/client'
 
-export default function About() {
-  return (
-    <main className={styles.main}>
-      <Header />
-      <section className={styles.about}>
-        <h1 className={styles.heading}>Contact Us</h1>
-        <p>
-          Form here
-        </p>
-      </section>
-    </main>
-  )
+export default async function ContactPage() {
+  const data = await client.queries.otherPages({
+    relativePath: 'Contact.md',
+  })
+
+  return <Contact {...data}></Contact>
 }

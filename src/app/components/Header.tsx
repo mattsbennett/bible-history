@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className={s.header}>
       <div className={s.logoWrap}>
-        <Link aria-label='Go to homepage' href={'/'}>
+        <Link aria-label="Go to homepage" href={'/'}>
           <Image src={'/logo.svg'} width={45} height={45} alt="Logo" />
         </Link>
       </div>
