@@ -87,9 +87,25 @@
   position: absolute;
   z-index: -2;
   width: 3px;
-  height: 100%;
+  height: calc(100% + 6rem);
   background-color: rgb(var(--card-rgb));
   left: 238px;
+
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: -12px;
+    left: -6px;
+    width: 15px;
+    height: 15px;
+    max-height: 15px;
+    max-width: 15px;
+    min-height: 15px;
+    min-width: 15px;
+    border-radius: 100%;
+    background-color: rgb(var(--foreground-rgb));
+    box-shadow: 0 0 0 8px rgb(var(--background-rgb));
+  }
 
   @include breakpoint(0 $breakpoint-sm) {
     left: 6px;
@@ -109,15 +125,6 @@
       rgba(var(--background-rgb), 0) 100%
     );
     top: 0;
-  }
-
-  &.bottom {
-    background: linear-gradient(
-      to top,
-      rgba(var(--background-rgb), 1) 0%,
-      rgba(var(--background-rgb), 0) 100%
-    );
-    bottom: 0;
   }
 }
 
@@ -151,30 +158,27 @@
 }
 
 .today {
+  font-size: clamp(1.75rem, 5vw, 2rem);
   text-align: left;
-  margin-left: 290px;
-  margin-top: 2rem;
-  margin-bottom: 15rem;
+  margin: 2rem auto 15rem;
+  padding-left: 330px;
+  max-width: 1120px;
 
   h1 {
     display: inline-block;
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    transform: translateX(-50%);
   }
 
   p {
-    margin-left: -55px;
     color: rgb(var(--foreground-secondary-rgb));
-    font-size: 1.25rem;
+    font-size: clamp(1.1rem, 3vw, 1.25rem);
     font-weight: 400;
     line-height: 1.5;
   }
 
   @include breakpoint(0 $breakpoint-sm) {
-    margin-left: 0;
-    margin-top: 1rem;
-    margin-bottom: 10rem;
+    padding-left: 64px;
 
     h1 {
       font-size: 2rem;

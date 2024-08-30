@@ -77,7 +77,6 @@ export default async function Home() {
               />
             )
           })}
-          <div className={clsx(s.timelineProgressOverlay, s.bottom)}></div>
         </div>
         <div className={s.today}>
           <h1>{pageData.timelineOutroHeading}</h1>
