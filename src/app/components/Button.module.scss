@@ -19,7 +19,6 @@
 
   &:disabled {
     pointer-events: none;
-    opacity: 0.5;
   }
 }
 
@@ -30,6 +29,10 @@
   &:hover {
     background-color: rgba(var(--card-rgb), 0.9);
   }
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }
 
 .outline {
@@ -39,6 +42,11 @@
   &:hover {
     background-color: rgb(var(--foreground-rgb));
     color: rgb(var(--background-rgb));
+  }
+
+  &:disabled {
+    border-color: rgb(var(--foreground-tertiary-rgb));
+    color: rgb(var(--foreground-tertiary-rgb));
   }
 }
 
@@ -68,6 +76,11 @@
   &:hover {
     background: rgba(var(--foreground-rgb), 0.9);
   }
+
+  &:disabled {
+    border-color: rgb(var(--foreground-tertiary-rgb));
+    color: rgb(var(--foreground-tertiary-rgb));
+  }
 }
 
 .ghost {
@@ -78,6 +91,10 @@
     border: 1px solid;
     color: rgb(var(--foreground-rgb));
   }
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }
 
 .link {
@@ -86,6 +103,10 @@
 
   &:hover {
     text-decoration: underline;
+  }
+
+  &:disabled {
+    opacity: 0.5;
   }
 }
 

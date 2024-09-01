@@ -32,8 +32,6 @@ export async function sendMessage(prevState: State, data: FormData): Promise<Sta
 
     const submission = { email, name, message, access_key: process.env.WEB_3_FORMS_KEY }
 
-    console.log(submission)
-
     await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {

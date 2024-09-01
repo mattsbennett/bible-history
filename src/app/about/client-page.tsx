@@ -1,6 +1,6 @@
 'use client'
 
-import { tinaField, useTina } from 'tinacms/dist/react'
+import { useTina } from 'tinacms/dist/react'
 import Header from '../components/Header'
 import styles from './page.module.scss'
 import { OtherPagesQuery } from '../../../tina/__generated__/types'

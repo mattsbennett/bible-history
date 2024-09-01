@@ -1,6 +1,6 @@
 'use client'
 
-import { z } from 'zod'
+import { z, ZodError } from 'zod'
 import { useTina } from 'tinacms/dist/react'
 import { OtherPagesQuery } from '../../../tina/__generated__/types'
 import Header from '../components/Header'
@@ -39,6 +39,7 @@ export default function Contact(props: ContactProps) {
   })
   const [state, formAction] = useFormState<State, FormData>(sendMessage, null)
   const [responseMessage, setResponseMessage] = useState('')
+  const [isPending, setIsPending] = useState(false)
   const form = useForm<z.infer<typeof contactFormSchema>>({
     mode: 'onBlur',
     reValidateMode: 'onBlur',
@@ -65,18 +66,32 @@ export default function Contact(props: ContactProps) {
     },
   })
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    if (!form.formState.isValid) {
-        event.preventDefault()
-        return
+    try {
+      contactFormSchema.parse(form.getValues())
+    } catch (e) {
+        if (e instanceof ZodError) {
+            e.errors.forEach((error) => {
+                form.setError(error.path[0] as FieldPath<FormValues>, {
+                    message: error.message,
+                })
+            })
+            event.preventDefault()
+            return
+        }
     }
+
+    setIsPending(true)
+    formAction(new FormData(event.currentTarget))
   }
 
   useEffect(() => {
     if (!state) {
       return
     }
+
+    setIsPending(false)
+
     if (state.status === 'error') {
-      console.log(state.errors)
       state.errors?.forEach((error) => {
         form.setError(error.path as FieldPath<FormValues>, {
           message: error.message,
@@ -142,12 +157,12 @@ export default function Contact(props: ContactProps) {
                 </FormItem>
               )}
             />
-            <Button type="submit" variant="outline">
-              Send
+            <Button type="submit" variant="outline" disabled={isPending}>
+              {isPending ? 'Sending...' : 'Send'}
             </Button>
           </form>
         </Form>
-        <span>{responseMessage}</span>
+        <span className={styles.response}>{responseMessage}</span>
       </section>
     </main>
   )
