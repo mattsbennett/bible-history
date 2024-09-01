@@ -6,6 +6,7 @@
     'Courier New', monospace;
   --foreground-rgb: 0, 0, 0;
   --foreground-secondary-rgb: 55, 55, 55;
+  --foreground-tertiary-rgb: 80, 80, 80;
   --background-rgb: 243, 243, 243;
   --background-secondary-rgb: 233, 233, 233;
   --background-tertiary-rgb: 215, 215, 215;
@@ -38,6 +39,7 @@
 [data-theme='dark'] {
   --foreground-rgb: 255, 255, 255;
   --foreground-secondary-rgb: 205, 205, 205;
+  --foreground-tertiary-rgb: 155, 155, 155;
   --background-rgb: 10, 10, 10;
   --background-secondary-rgb: 20, 20, 20;
   --background-tertiary-rgb: 50, 50, 50;

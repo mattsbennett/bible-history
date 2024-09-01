@@ -1,4 +1,4 @@
-.about {
+.contact {
   padding: 7.5%;
 
   p {
@@ -13,4 +13,8 @@
   font-size: clamp(2rem, 4vw, 4rem);
   line-height: 1;
   border-top: 2px solid rgb(var(--card-border-rgb));
+}
+
+.form {
+  padding: 0 7.5%;
 }
