@@ -1,5 +1,8 @@
 import { defineConfig } from 'tinacms'
 
+console.log('Tina Client ID:', process.env.NEXT_PUBLIC_TINA_CLIENT_ID);
+console.log('Tina Token:', process.env.TINA_TOKEN);
+
 // Your hosting provider likely exposes this as an environment variable
 const branch =
   process.env.NEXT_PUBLIC_TINA_BRANCH ||
