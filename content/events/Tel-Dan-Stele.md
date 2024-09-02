@@ -7,6 +7,10 @@ intro: >-
   biblical city of Dan, which was the northernmost city of ancient Israel. Large
   sections of middle bronze and iron age cities have been uncovered. In 1993, a
   reused building stone was discovered that contained ancient writing.
+source: >
+  Israel Finkelstein and Neil Asher Silberman,Davld and Solomon, In Search of
+  the Bible's Sacred Kings and The Roots of the Western Tradition. Free Press.
+  NY, 2006. 342 pp
 dated: '-835'
 discovered: '1993'
 ---

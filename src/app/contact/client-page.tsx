@@ -69,15 +69,15 @@ export default function Contact(props: ContactProps) {
     try {
       contactFormSchema.parse(form.getValues())
     } catch (e) {
-        if (e instanceof ZodError) {
-            e.errors.forEach((error) => {
-                form.setError(error.path[0] as FieldPath<FormValues>, {
-                    message: error.message,
-                })
-            })
-            event.preventDefault()
-            return
-        }
+      if (e instanceof ZodError) {
+        e.errors.forEach((error) => {
+          form.setError(error.path[0] as FieldPath<FormValues>, {
+            message: error.message,
+          })
+        })
+        event.preventDefault()
+        return
+      }
     }
 
     setIsPending(true)

@@ -131,6 +131,12 @@ export default defineConfig({
             required: true,
           },
           {
+            type: 'rich-text',
+            name: 'source',
+            label: 'Source',
+            toolbarOverride: ['bold', 'italic', 'link'],
+          },
+          {
             type: 'string',
             name: 'dated',
             label: 'Dated Year',

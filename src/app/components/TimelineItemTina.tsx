@@ -16,7 +16,7 @@ import NavSelectTina from './NavSelectTina'
 import { Events } from '../../../tina/__generated__/types'
 import { RefTagger } from 'react-reftagger'
 import BibleUp from '@bibleup/bibleup'
-import "@bibleup/bibleup/css"
+import '@bibleup/bibleup/css'
 import Lightbox, { SlideImage } from 'yet-another-react-lightbox'
 import Captions from 'yet-another-react-lightbox/plugins/captions'
 import LightboxImage from './LightBoxImage'
@@ -29,7 +29,7 @@ export default function TimelineItemTina({ event, events }: { event: Events; eve
   const [open, setOpen] = useState(false)
   const { ref, inView, entry } = useInView({ rootMargin: `-49.5% 0% -49.5% 0%` })
   const timelineTextRef = useRef(null)
-  const bibleUpRef = useRef<BibleUp|null>(null)
+  const bibleUpRef = useRef<BibleUp | null>(null)
   const lightboxSlides: SlideImage[] = [
     {
       src: getImagePath(event.coverImage ?? ''),
@@ -72,16 +72,14 @@ export default function TimelineItemTina({ event, events }: { event: Events; eve
   }, [isMounted])
 
   if (!bibleUpRef.current && timelineTextRef.current) {
-    console.log('creating BibleUp')
-    console.log(timelineTextRef.current)
     bibleUpRef.current = new BibleUp(timelineTextRef.current, {
       version: 'ESV',
       popup: 'classic',
       darkTheme: false,
       styles: {
-        borderRadius: "5px",
-        boxShadow: "none"
-      }
+        borderRadius: '5px',
+        boxShadow: 'none',
+      },
     })
     bibleUpRef.current.create()
   }
@@ -94,11 +92,11 @@ export default function TimelineItemTina({ event, events }: { event: Events; eve
       )}
       ref={ref}
     >
-      <div className={s.timelineLeft}>
+      <div className={clsx(s.timelineLeft, readMore ? s.readMore : '')}>
         {discovered}
         {dated}
       </div>
-      <div className={s.timelineCentre}>
+      <div className={clsx(s.timelineCentre, readMore ? s.readMore : '')}>
         <div className={s.timelineCircle}></div>
       </div>
       <div className={s.timelineRight}>
@@ -139,6 +137,11 @@ export default function TimelineItemTina({ event, events }: { event: Events; eve
           </div>
           <div className={clsx(s.fullTextWrap, readMore ? '' : s.truncated)}>
             <TinaMarkdown content={event.body} />
+            {event.source.children.length > 0 && (
+              <div className={s.source}>
+                <TinaMarkdown content={event.source} />
+              </div>
+            )}
             <div className={s.gradient}>
               <Button
                 variant="secondary"

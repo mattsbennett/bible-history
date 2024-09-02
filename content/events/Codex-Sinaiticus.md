@@ -11,7 +11,7 @@ discovered: '1859'
 
 Codex Sinaiticus (London, Brit. Libr., Add. 43725; Gregory-Aland no. à (Aleph) or 01) is a 4th century uncial manuscript of the Greek Bible, written between 330–350. Originally containing the whole of both Testaments, only portions of the Greek Old Testament or Septuagint survive along with a complete New Testament, the Epistle of Barnabas and portions of The Shepherd of Hermas (suggesting that the latter two may have been considered part of Biblical canon by the editors of the codex). Along with Codex Vaticanus, Codex Sinaiticus is one of the most valuable manuscripts for Textual criticism of the Greek New Testament, as well as the Septuagint. For most of the New Testament, Codex Sinaiticus is in general agreement with Codex Vaticanus and Codex Ephraemi Rescriptus, attesting an Alexandrian texttype, but in John 1:1-8:38 Codex Sinaiticus is in closer agreement with Codex Bezae in support of a Western text-type.
 
-\#### Description
+#### Description
 
 The entire codex consists of 346½ folios, written in four columns. Of these, 199 belong to the Old Testament and 147½ belong to the New Testament, along with two other books, the Epistle of Barnabas and part of The Shepherd of Hermas. The books of the New Testament are arranged in this order: the four Gospels, the epistles of Paul, the Acts of the Apostles, the General Epistles, Revelation.
 
@@ -19,7 +19,7 @@ Of its prior history, little is known. It is speculated to have been written in 
 
 A paleographical study at the British Museum in 1938 found that the text had undergone several corrections. The first corrections were done by several scribes before the manuscript left the scriptorium. In the sixth or seventh century many alterations were made, which, according to a colophon at the end of the book of Esdras and Esther states, that the source of these alterations was "a very ancient manuscript that had been corrected by the hand of the holy martyr Pamphylus" (martyred AD 309). From this is concluded, that it had been in Caesarea Palaestina in the 6th or 7th centuries. Uncorrected is the pervasive iotacism, especially of the ει diphthong.
 
-\#### Discovery
+#### Discovery
 
 The Codex Sinaiticus was found by Constantin von Tischendorf on his third visit to the Monastery of Saint Catherine, on Mount Sinai in Egypt, in 1859. The first two trips had yielded parts of the Old Testament, some found in a basket of manuscript pieces, which Tischendorf was told by a librarian "were rubbish which was to be destroyed by burning in the ovens of the monastery".
 
@@ -35,7 +35,7 @@ In a more neutral spirit, New Testament scholar Bruce Metzger writes: "Certain a
 
 For many decades, it was preserved in the Russian National Library. In 1933, the Soviet Union sold the Codex to the British Library for £100,000.
 
-\#### Present Location
+#### Present Location
 
 The Codex is now split into four unequal portions: 347 leaves in the British Library in London, 12 leaves and 14 fragments in St. Catherine's Monastery of Sinai, 43 leaves in the Leipzig University Library, and fragments of 3 leaves in the Russian National Library in St Petersburg.
 
