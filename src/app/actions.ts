@@ -19,7 +19,7 @@ export type State =
     }
   | null
 
-export async function sendMessage(data: FormData): Promise<State> {
+export async function sendMessage(prevState: State, data: FormData): Promise<State> {
   try {
     let responseMessage = ''
     let isSuccess = false
