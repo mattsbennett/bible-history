@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import clsx from 'clsx'
 import Image from 'next/image'
@@ -14,6 +14,9 @@ import slugify from '@sindresorhus/slugify'
 import { Hash } from 'lucide-react'
 import NavSelectTina from './NavSelectTina'
 import { Events } from '../../../tina/__generated__/types'
+import { RefTagger } from 'react-reftagger'
+import BibleUp from '@bibleup/bibleup'
+import "@bibleup/bibleup/css"
 import Lightbox, { SlideImage } from 'yet-another-react-lightbox'
 import Captions from 'yet-another-react-lightbox/plugins/captions'
 import LightboxImage from './LightBoxImage'
@@ -25,6 +28,8 @@ export default function TimelineItemTina({ event, events }: { event: Events; eve
   const [readMore, setReadMore] = useState(false)
   const [open, setOpen] = useState(false)
   const { ref, inView, entry } = useInView({ rootMargin: `-49.5% 0% -49.5% 0%` })
+  const timelineTextRef = useRef(null)
+  const bibleUpRef = useRef<BibleUp|null>(null)
   const lightboxSlides: SlideImage[] = [
     {
       src: getImagePath(event.coverImage ?? ''),
@@ -66,6 +71,21 @@ export default function TimelineItemTina({ event, events }: { event: Events; eve
     }
   }, [isMounted])
 
+  if (!bibleUpRef.current && timelineTextRef.current) {
+    console.log('creating BibleUp')
+    console.log(timelineTextRef.current)
+    bibleUpRef.current = new BibleUp(timelineTextRef.current, {
+      version: 'ESV',
+      popup: 'classic',
+      darkTheme: false,
+      styles: {
+        borderRadius: "5px",
+        boxShadow: "none"
+      }
+    })
+    bibleUpRef.current.create()
+  }
+
   return (
     <div
       className={clsx(
@@ -82,7 +102,7 @@ export default function TimelineItemTina({ event, events }: { event: Events; eve
         <div className={s.timelineCircle}></div>
       </div>
       <div className={s.timelineRight}>
-        <div id={slugify(event.title)} className={s.timelineText}>
+        <div id={slugify(event.title)} className={s.timelineText} ref={timelineTextRef}>
           <div className={s.underlineOverlay}></div>
           <div className={s.itemHeader}>
             {inView ? <NavSelectTina event={event} events={events} /> : null}
@@ -165,6 +185,7 @@ export default function TimelineItemTina({ event, events }: { event: Events; eve
           },
         }}
       />
+      {/* <RefTagger bibleVersion={'ESV'} /> */}
     </div>
   )
 }

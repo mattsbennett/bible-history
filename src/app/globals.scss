@@ -65,6 +65,11 @@
   --callout-border-rgb: 35, 35, 35;
   --card-rgb: 100, 100, 100;
   --card-border-rgb: 200, 200, 200;
+
+  // stylelint-disable-next-line
+  .bu-link {
+    color: #ff7448 !important;
+  }
 }
 
 * {
@@ -92,6 +97,40 @@ a {
 // stylelint-disable-next-line
 .yarl__slide_description {
   min-height: 50px;
+}
+
+// BibleUp
+// stylelint-disable-next-line
+.bu-popup-footer {
+  height: 10px;
+
+  p {
+    display: none;
+  }
+}
+
+// stylelint-disable-next-line
+.bu-popup-header {
+  background-color: rgb(var(--background-tertiary-rgb)) !important;
+  color: rgb(var(--card-foreground-rgb)) !important;
+
+  // stylelint-disable-next-line
+  .bu-popup-version {
+    background-color: rgb(var(--card-rgb)) !important;
+    color: rgb(var(--card-foreground-rgb)) !important;
+  }
+}
+
+// stylelint-disable-next-line
+.bu-classic {
+  background: rgb(var(--background-secondary-rgb)) !important;
+  border: 1px solid rgb(var(--background-tertiary-rgb)) !important;
+  color: rgb(var(--foreground-rgb)) !important;
+}
+
+// stylelint-disable-next-line
+.bu-link {
+  color: #6248ff !important;
 }
 
 @media (prefers-color-scheme: dark) {
