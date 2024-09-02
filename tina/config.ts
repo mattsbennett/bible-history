@@ -1,5 +1,6 @@
 import { defineConfig } from 'tinacms'
 
+console.log('Process.env:', process.env);
 console.log('Tina Client ID:', process.env.NEXT_PUBLIC_TINA_CLIENT_ID);
 console.log('Tina Token:', process.env.TINA_TOKEN);
 
