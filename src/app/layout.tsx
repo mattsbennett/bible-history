@@ -3,6 +3,8 @@ import { ThemeProvider } from 'next-themes'
 import { Inter } from 'next/font/google'
 import './globals.scss'
 
+export const runtime = "edge";
+
 const sourceSans = Inter({
   weight: ['200', '300', '400', '500', '600', '700'],
   subsets: ['latin'],

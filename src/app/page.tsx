@@ -7,6 +7,8 @@ import { client } from '../../tina/__generated__/client'
 import { Events } from '../../tina/__generated__/types'
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
 
+export const runtime = "edge";
+
 export default async function Home() {
   const { data: eventsData } = await client.queries.eventsConnection()
   const page = await client.queries.timelinePage({
