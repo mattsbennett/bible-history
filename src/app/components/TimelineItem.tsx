@@ -1,26 +1,46 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import clsx from 'clsx'
 import Image from 'next/image'
-import Markdown from 'react-markdown'
-import { Badge } from './Badge'
-import { Button } from './Button'
-import { getFormattedYear } from '../utils/generalUtils'
-import { Event } from '../events'
-import s from './TimelineItem.module.scss'
+import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import Link from 'next/link'
 import slugify from '@sindresorhus/slugify'
 import { Hash } from 'lucide-react'
 import NavSelect from './NavSelect'
+import BibleUp from '@bibleup/bibleup'
+import '@bibleup/bibleup/css'
+import Lightbox, { SlideImage } from 'yet-another-react-lightbox'
+import Captions from 'yet-another-react-lightbox/plugins/captions'
+import LightboxImage from './LightBoxImage'
+import 'yet-another-react-lightbox/styles.css'
+import 'yet-another-react-lightbox/plugins/captions.css'
 
-export default function TimelineItem({ event }: { event: Event }) {
+import { Events } from '../../../tina/__generated__/types'
+import { Badge } from './Badge'
+import { Button } from './Button'
+import { getFormattedYear, getImagePath } from '../utils/generalUtils'
+import s from './TimelineItem.module.scss'
+
+export default function TimelineItem({ event, events }: { event: Events; events: Events[] }) {
   const [isMounted, setMounted] = useState(false)
   const [readMore, setReadMore] = useState(false)
+  const [open, setOpen] = useState(false)
   const { ref, inView, entry } = useInView({ rootMargin: `-49.5% 0% -49.5% 0%` })
-  const datedYear = getFormattedYear(event.dated)
-  const discoveredYear = getFormattedYear(event.discovered)
+  const timelineTextRef = useRef(null)
+  const bibleUpRef = useRef<BibleUp | null>(null)
+  const lightboxSlides: SlideImage[] = [
+    {
+      src: getImagePath(event.coverImage ?? ''),
+      alt: event.title,
+      title: event.title,
+    },
+  ]
+  const datedYear = getFormattedYear(new Date(parseInt(event.dated, 10), 1))
+  const discoveredYear = event.discovered
+    ? getFormattedYear(new Date(parseInt(event.discovered, 10), 1))
+    : null
   const discovered = discoveredYear ? (
     <div className={s.discovered}>
       <Badge variant="outline">Discovered</Badge>
@@ -51,6 +71,19 @@ export default function TimelineItem({ event }: { event: Event }) {
     }
   }, [isMounted])
 
+  if (!bibleUpRef.current && timelineTextRef.current) {
+    bibleUpRef.current = new BibleUp(timelineTextRef.current, {
+      version: 'ESV',
+      popup: 'classic',
+      darkTheme: false,
+      styles: {
+        borderRadius: '5px',
+        boxShadow: 'none',
+      },
+    })
+    bibleUpRef.current.create()
+  }
+
   return (
     <div
       className={clsx(
@@ -59,27 +92,27 @@ export default function TimelineItem({ event }: { event: Event }) {
       )}
       ref={ref}
     >
-      <div className={s.timelineLeft}>
+      <div className={clsx(s.timelineLeft, readMore ? s.readMore : '')}>
         {discovered}
         {dated}
       </div>
-      <div className={s.timelineCentre}>
+      <div className={clsx(s.timelineCentre, readMore ? s.readMore : '')}>
         <div className={s.timelineCircle}></div>
       </div>
       <div className={s.timelineRight}>
-        <div id={slugify(event.name)} className={s.timelineText}>
+        <div id={slugify(event.title)} className={s.timelineText} ref={timelineTextRef}>
           <div className={s.underlineOverlay}></div>
           <div className={s.itemHeader}>
-            {inView ? <NavSelect event={event} /> : null}
+            {inView ? <NavSelect event={event} events={events} /> : null}
             <Link
-              aria-label={`Go to top of ${event.name} section`}
-              href={`#${slugify(event.name)}`}
+              aria-label={`Go to top of ${event.title} section`}
+              href={`#${slugify(event.title)}`}
               className={s.headingAnchor}
             >
               <h3>
-                {event.name.split(' ').slice(0, -1).join(' ')}{' '}
+                {event.title.split(' ').slice(0, -1).join(' ')}{' '}
                 <span className={s.lastWordWithIcon}>
-                  {event.name.split(' ').slice(-1)} <Hash size={28} className={s.hash} />
+                  {event.title.split(' ').slice(-1)} <Hash size={28} className={s.hash} />
                 </span>
               </h3>
             </Link>
@@ -89,13 +122,26 @@ export default function TimelineItem({ event }: { event: Event }) {
             {dated}
           </div>
           <div className={s.imgWrap}>
-            <Image src={`/${event.image}`} fill alt={event.name} />
+            <Image
+              className={s.coverImage}
+              src={getImagePath(event.coverImage ?? '')}
+              fill
+              alt={event.title}
+              onClick={() => {
+                setOpen(true)
+              }}
+            />
           </div>
           <div className={s.introWrap}>
-            <p className={s.intro}>{event.detail_short}</p>
+            <p className={s.intro}>{event.intro}</p>
           </div>
           <div className={clsx(s.fullTextWrap, readMore ? '' : s.truncated)}>
-            <Markdown>{event.detail_long}</Markdown>
+            <TinaMarkdown content={event.body} />
+            {event.source.children.length > 0 && (
+              <div className={s.source}>
+                <TinaMarkdown content={event.source} />
+              </div>
+            )}
             <div className={s.gradient}>
               <Button
                 variant="secondary"
@@ -111,6 +157,38 @@ export default function TimelineItem({ event }: { event: Event }) {
           </div>
         </div>
       </div>
+      <Lightbox
+        plugins={[Captions]}
+        open={open}
+        close={() => setOpen(false)}
+        slides={[
+          {
+            src: getImagePath(event.coverImage ?? ''),
+            alt: event.title,
+            title: event.title,
+            description: (
+              <div className={s.lightboxDescription}>
+                {dated}
+                {discovered}
+              </div>
+            ),
+          },
+        ]}
+        render={{
+          slide: LightboxImage,
+          buttonNext: () => {
+            if (lightboxSlides.length < 2) {
+              return null
+            }
+          },
+          buttonPrev: () => {
+            if (lightboxSlides.length < 2) {
+              return null
+            }
+          },
+        }}
+      />
+      {/* <RefTagger bibleVersion={'ESV'} /> */}
     </div>
   )
 }

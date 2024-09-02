@@ -3,12 +3,16 @@
 import { List } from 'lucide-react'
 import { Select, SelectContent, SelectItem, SelectTrigger } from './Select'
 
-import { Event, events } from '../events'
 import s from './NavSelect.module.scss'
 import slugify from '@sindresorhus/slugify'
 import { getFormattedYear } from '../utils/generalUtils'
+import { Events } from '../../../tina/__generated__/types'
 
-export default function NavSelect({ event }: { event: Event }) {
+export default function NavSelect({ event, events }: { event: Events; events: Events[] }) {
+  if (!event) {
+    return null
+  }
+
   const onValueChange = (value: string) => {
     const element = document.getElementById(slugify(value))
     if (element) {
@@ -18,7 +22,7 @@ export default function NavSelect({ event }: { event: Event }) {
     }
   }
   const filteredEvents = events.filter((e) => {
-    return e.name !== event.name
+    return e.title !== event.title
   })
   return (
     <Select onValueChange={onValueChange}>
@@ -30,8 +34,8 @@ export default function NavSelect({ event }: { event: Event }) {
           <strong>Top of page</strong>
         </SelectItem>
         {filteredEvents.map((event) => (
-          <SelectItem key={slugify(event.name)} value={event.name} className={s.item}>
-            {event.name} <em>{getFormattedYear(event.dated)}</em>
+          <SelectItem key={slugify(event.title)} value={event.title} className={s.item}>
+            {event.title} <em>{getFormattedYear(new Date(parseInt(event.dated, 10), 1))}</em>
           </SelectItem>
         ))}
       </SelectContent>

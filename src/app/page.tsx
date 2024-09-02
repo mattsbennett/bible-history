@@ -1,4 +1,4 @@
-import TimelineItemTina from './components/TimelineItemTina'
+import TimelineItem from './components/TimelineItem'
 import s from './page.module.scss'
 import { Card, CardDescription } from './components/Card'
 import Header from './components/Header'
@@ -62,15 +62,12 @@ export default async function Home() {
           <div className={s.timelineProgress}>
             <div className={s.timelineProgressBar}></div>
           </div>
-          {/* {events.map((event, index) => (
-            <TimelineItem key={index} event={event} />
-          ))} */}
           {events.map((event) => {
             if (!event) {
               return null
             }
             return (
-              <TimelineItemTina
+              <TimelineItem
                 key={event.id}
                 event={event as Events}
                 events={events as Events[]}

@@ -19,7 +19,7 @@ export type State =
     }
   | null
 
-export async function sendMessage(prevState: State, data: FormData): Promise<State> {
+export async function sendMessage(data: FormData): Promise<State> {
   try {
     let responseMessage = ''
     let isSuccess = false
@@ -50,8 +50,6 @@ export async function sendMessage(prevState: State, data: FormData): Promise<Sta
         responseMessage = 'Client Error. Please check the console.log for more info'
         console.log(error)
       })
-
-    console.log(responseMessage)
 
     return {
       status: isSuccess ? 'success' : 'error',
