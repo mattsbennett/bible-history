@@ -7,10 +7,7 @@
     "build": "tinacms build && next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write .",
-    "pages:build": "npx @cloudflare/next-on-pages",
-    "preview": "npm run pages:build && wrangler pages dev",
-    "deploy": "npm run pages:build && wrangler pages deploy"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@bibleup/bibleup": "^1.1.0",
